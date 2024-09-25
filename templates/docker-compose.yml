@@ -1,0 +1,10 @@
+services:
+  mkdocs:
+    build: 
+      context: ../
+      dockerfile: ./templates/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ${PWD}:/docs
+    command: serve -a 0.0.0.0:8000
